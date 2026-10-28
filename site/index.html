@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lumen — Calm, focused planning for teams</title>
+  <meta name="description" content="Lumen turns scattered tasks, docs and meetings into one calm weekly plan your whole team can trust.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Inline SVG icon sprite (Lucide-style, 1.75 stroke) -->
+  <svg width="0" height="0" class="sr-only" aria-hidden="true" focusable="false">
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10 21a2 2 0 0 0 4 0"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.5 3-6 6.5-6s6.5 2.5 6.5 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2.2.7 3.5 2.9 3.5 6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></symbol>
+  </svg>
+
+  <header class="site-header" data-header>
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Lumen home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Lumen</span>
+      </a>
+
+      <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu" data-nav-toggle>
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+
+      <div class="nav-menu" id="nav-menu" data-nav-menu>
+        <ul class="nav-links" role="list">
+          <li><a href="#problem">Why Lumen</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="icon-btn" type="button" aria-label="Switch to dark theme" data-theme-toggle>
+            <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+            <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          </button>
+          <a class="btn btn-ghost" href="#signin">Sign in</a>
+          <a class="btn btn-primary" href="#start">Start free</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- Hero / intro hook -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Planning, without the noise</p>
+          <h1 id="hero-title" class="display">Your week, <em>brought into focus.</em></h1>
+          <p class="lede">Lumen turns scattered tasks, docs and meetings into one calm weekly plan your whole team can trust — so the important work actually happens.</p>
+          <div class="cta-row">
+            <a class="btn btn-accent btn-lg" href="#start">
+              Start free for 14 days
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="btn btn-outline btn-lg" href="#how">See how it works</a>
+          </div>
+          <ul class="hero-assurances" role="list">
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>No credit card</li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Set up in 5 minutes</li>
+            <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Cancel anytime</li>
+          </ul>
+        </div>
+
+        <figure class="hero-visual" aria-label="Preview of the Lumen weekly plan view">
+          <div class="mock" role="img" aria-label="A weekly plan showing three focus blocks for Monday, a team sync on Tuesday, and a 72 percent progress ring for the week.">
+            <div class="mock-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="mock-body" aria-hidden="true">
+              <div class="mock-side">
+                <p class="mock-label">This week</p>
+                <div class="ring" style="--p:72"><span>72%</span></div>
+                <p class="mock-caption">On track</p>
+              </div>
+              <ol class="mock-list">
+                <li><span class="tag tag-gold">Focus</span><span>Draft Q4 roadmap</span><time>Mon 9:00</time></li>
+                <li><span class="tag">Sync</span><span>Design review</span><time>Tue 11:30</time></li>
+                <li><span class="tag tag-gold">Focus</span><span>Pricing experiment</span><time>Wed 14:00</time></li>
+                <li class="is-done"><span class="tag">Done</span><span>Hiring plan</span><time>Thu 10:00</time></li>
+              </ol>
+            </div>
+          </div>
+        </figure>
+      </div>
+
+      <div class="container">
+        <p class="logos-title">Trusted by focused teams at</p>
+        <ul class="logos" role="list">
+          <li>Northwind</li><li>Halcyon</li><li>Meridian&nbsp;Labs</li><li>Oakline</li><li>Fieldstone</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Chapter 1: the problem -->
+    <section class="section chapter-1" id="problem" aria-labelledby="problem-title">
+      <div class="container narrow center">
+        <p class="eyebrow">Chapter one · The problem</p>
+        <h2 id="problem-title" class="h2">Busy isn't the same as progress.</h2>
+        <p class="lede">The average knowledge worker switches context every few minutes. Priorities live in five tools, and nobody can say what matters this week.</p>
+      </div>
+      <div class="container">
+        <ul class="stats" role="list">
+          <li class="stat reveal"><span class="stat-num">5+</span><span class="stat-label">tools to check before you know what to do next</span></li>
+          <li class="stat reveal"><span class="stat-num">2&nbsp;hrs</span><span class="stat-label">a day lost to status updates and re-planning</span></li>
+          <li class="stat reveal"><span class="stat-num">1 in 3</span><span class="stat-label">weekly goals quietly slip without anyone noticing</span></li>
+        </ul>
+        <p class="footnote">Illustrative figures based on common workplace research; your team's numbers will vary.</p>
+      </div>
+    </section>
+
+    <!-- Chapter 2: the journey -->
+    <section class="section chapter-2" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Chapter two · How it works</p>
+          <h2 id="how-title" class="h2">Three steps to a calmer week.</h2>
+        </div>
+        <ol class="steps" role="list">
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">01</span>
+            <h3 class="h3">Gather</h3>
+            <p>Connect your calendar, issue tracker and docs. Lumen pulls every commitment into one place — read-only, nothing moved.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">02</span>
+            <h3 class="h3">Prioritise</h3>
+            <p>Pick three outcomes for the week. Lumen suggests focus blocks around your meetings and flags what won't fit.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">03</span>
+            <h3 class="h3">Follow through</h3>
+            <p>A gentle Friday review shows what shipped and what moved, so next week starts with clarity instead of guilt.</p>
+          </li>
+        </ol>
+        <div class="mini-cta">
+          <a class="link-arrow" href="#start">Try the 5-minute setup <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 3: the solution -->
+    <section class="section chapter-3" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Chapter three · The solution</p>
+          <h2 id="features-title" class="h2">Everything you need. Nothing you don't.</h2>
+        </div>
+        <ul class="features" role="list">
+          <li class="card feature feature-wide reveal">
+            <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+            <h3 class="h3">Smart focus blocks</h3>
+            <p>Lumen reads your calendar and protects deep-work time automatically, moving blocks when meetings shift.</p>
+          </li>
+          <li class="card feature reveal">
+            <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+            <h3 class="h3">One source of truth</h3>
+            <p>Tasks from Linear, Jira, GitHub and Notion in a single, de-duplicated list.</p>
+          </li>
+          <li class="card feature reveal">
+            <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+            <h3 class="h3">Team weekly plan</h3>
+            <p>Everyone's three outcomes on one page. No more status meetings.</p>
+          </li>
+          <li class="card feature reveal">
+            <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg></span>
+            <h3 class="h3">Quiet notifications</h3>
+            <p>One digest at the time you choose — never a ping during focus.</p>
+          </li>
+          <li class="card feature reveal">
+            <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <h3 class="h3">Private by design</h3>
+            <p>Read-only integrations, SSO, and data encrypted at rest and in transit. Your plans are never used to train models.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Social proof -->
+    <section class="section testimonials" aria-labelledby="quotes-title">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">What teams say</p>
+          <h2 id="quotes-title" class="h2">Quieter weeks. Bigger results.</h2>
+        </div>
+        <ul class="quotes" role="list">
+          <li class="card quote reveal">
+            <blockquote><p>“We cut our Monday planning meeting entirely. The weekly plan just <em>is</em> the meeting now.”</p></blockquote>
+            <p class="quote-by"><span class="avatar" aria-hidden="true">AR</span><span><strong>Amara Reyes</strong><br>Head of Product, Halcyon</span></p>
+          </li>
+          <li class="card quote reveal">
+            <blockquote><p>“Focus blocks that move themselves sound small. They gave my engineers back a day a week.”</p></blockquote>
+            <p class="quote-by"><span class="avatar" aria-hidden="true">JL</span><span><strong>Jonas Lindqvist</strong><br>Engineering Manager, Oakline</span></p>
+          </li>
+          <li class="card quote reveal">
+            <blockquote><p>“The first planning tool our team still opens after the trial. Calm is the feature.”</p></blockquote>
+            <p class="quote-by"><span class="avatar" aria-hidden="true">PK</span><span><strong>Priya Kapoor</strong><br>COO, Meridian Labs</span></p>
+          </li>
+        </ul>
+        <p class="footnote center">Sample testimonials for this design demo.</p>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section pricing" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="section-head center">
+          <p class="eyebrow">Pricing</p>
+          <h2 id="pricing-title" class="h2">Simple plans that grow with you.</h2>
+          <div class="billing" role="group" aria-label="Billing period">
+            <button type="button" class="billing-opt" aria-pressed="false" data-billing="monthly">Monthly</button>
+            <button type="button" class="billing-opt" aria-pressed="true" data-billing="yearly">Yearly <span class="save">Save 20%</span></button>
+          </div>
+        </div>
+        <ul class="plans" role="list">
+          <li class="card plan">
+            <h3 class="h3">Personal</h3>
+            <p class="plan-desc">For individuals building a focus habit.</p>
+            <p class="price"><span class="amount">Free</span></p>
+            <ul class="plan-list" role="list">
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>1 calendar, 2 integrations</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Smart focus blocks</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Weekly review</li>
+            </ul>
+            <a class="btn btn-outline btn-block" href="#start">Get started</a>
+          </li>
+          <li class="card plan plan-featured">
+            <p class="badge">Most popular</p>
+            <h3 class="h3">Team</h3>
+            <p class="plan-desc">For teams that want one shared weekly plan.</p>
+            <p class="price"><span class="amount" data-price data-monthly="12" data-yearly="10">$10</span><span class="per">/ user / month<span class="per-note" data-per-note>, billed yearly</span></span></p>
+            <ul class="plan-list" role="list">
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Unlimited integrations</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Team weekly plan</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Quiet notification digests</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Priority support</li>
+            </ul>
+            <a class="btn btn-accent btn-block" href="#start">Start 14-day trial</a>
+          </li>
+          <li class="card plan">
+            <h3 class="h3">Enterprise</h3>
+            <p class="plan-desc">For organisations with advanced security needs.</p>
+            <p class="price"><span class="amount">Custom</span></p>
+            <ul class="plan-list" role="list">
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>SSO &amp; SCIM provisioning</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Audit logs &amp; data residency</li>
+              <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Dedicated success manager</li>
+            </ul>
+            <a class="btn btn-outline btn-block" href="#start">Talk to sales</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container narrow">
+        <div class="section-head center">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title" class="h2">Questions, answered.</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Does Lumen change anything in my other tools?<svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>No. Integrations are read-only by default. Lumen only writes focus blocks to your calendar if you turn that on.</p>
+          </details>
+          <details>
+            <summary>How long does setup take?<svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>About five minutes: connect a calendar, connect one task tool, and choose your three outcomes for the week.</p>
+          </details>
+          <details>
+            <summary>Can I switch plans later?<svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>Yes. Upgrade, downgrade or cancel anytime from settings. Yearly plans are prorated.</p>
+          </details>
+          <details>
+            <summary>Is my data used to train AI models?<svg class="icon chev" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+            <p>Never. Your plans and connected data are used only to provide the service to your workspace.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Climax CTA -->
+    <section class="section final-cta" id="start" aria-labelledby="cta-title">
+      <div class="container narrow center">
+        <h2 id="cta-title" class="h2">Bring next week into focus.</h2>
+        <p class="lede">Start free for 14 days. No credit card required.</p>
+        <form class="signup" novalidate data-signup>
+          <div class="field">
+            <label for="email">Work email <span aria-hidden="true">*</span></label>
+            <div class="signup-row">
+              <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required aria-required="true" aria-describedby="email-help email-error" placeholder="you@company.com">
+              <button class="btn btn-accent btn-lg" type="submit" data-submit>
+                <span class="btn-label">Start free</span>
+                <span class="spinner" aria-hidden="true"></span>
+              </button>
+            </div>
+            <p class="help" id="email-help">We'll send a sign-in link. No spam, ever.</p>
+            <p class="error" id="email-error" role="alert" hidden>
+              <svg class="icon icon-sm" aria-hidden="true"><use href="#i-alert"/></svg>
+              <span data-error-text></span>
+            </p>
+          </div>
+          <p class="success" role="status" data-success hidden>
+            <svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>
+            <span>Check your inbox — your sign-in link is on its way.</span>
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="#top" aria-label="Lumen home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">Lumen</span>
+        </a>
+        <p class="muted">Calm, focused planning for teams.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="footer-links" role="list">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#privacy">Privacy</a></li>
+          <li><a href="#terms">Terms</a></li>
+        </ul>
+      </nav>
+      <p class="muted small">© 2026 Lumen. A design demo.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
